@@ -4,7 +4,6 @@
 #include "PowerPC_EABI_Support/Runtime/__ppc_eabi_linker.h"
 
 #define RETURN_ADDRESS 4
-
 union MWE_GeckoVector64 {
 	f64 d;
 	f32 f[2];
