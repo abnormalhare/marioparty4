@@ -23,6 +23,10 @@ Supported versions:
 - `GMPP01_02`: Rev 2 (PAL) 
 - `GMPJ01_00`: Rev 0 (JP)
 
+PC Port
+=======
+The PC Port is on a different branch! Click the dropdown above and to the left of the file structure and select `port` to get to it.
+
 Dependencies
 ============
 
