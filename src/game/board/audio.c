@@ -1,19 +1,48 @@
+/**
+ * @file audio.c
+ * @brief Board Music and Audio handling functions
+ * @date 2026-05-18
+ */
+
 #include "game/board/audio.h"
 #include "game/audio.h"
 #include "game/gamework_data.h"
 #include "game/msm.h"
 #include "game/board/main.h"
 
+/**
+ * @brief channels and music ids for general (board songs) and
+ *     special (e.g. board space songs) music played
+ * 
+ */
 static s16 boardSeq[2][2];
 
+/**
+ * @brief Board sound effect number played when board music starts
+ * 
+ */
 static s32 boardFX = -1;
 
+/**
+ * @brief Array of each board's music ID that plays during normal gameplay
+ * 
+ */
 static s16 boardMusTbl[] = {
     0x000D, 0x0011, 0x0015,
     0x001C, 0x0021, 0x0025,
     0x0028, 0x0029, 0x002A
 };
 
+/**
+ * @brief Starts the music for the current board
+ * 
+ * @details This function is called when the game transitions
+ *     to the standard board in order to play the board's music.
+ *     It does the following:
+ *
+ *   * Starts the music for the current board at max volume
+ *   * Plays the starting board sound effect if there is one
+ */
 void BoardMusStartBoard(void) {
     s16 musIdx = boardMusTbl[GWBoardGet()];
 
